@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swiper Bug</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8.4.5/swiper-bundle.css">
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8.4.5/swiper-bundle.js"></script>
+
+  <style>
+    .swiper {
+      width: 382px;
+      height: 200px;
+    }
+
+    .swiper-slide {
+      padding-top: 1rem;
+      background-color: hsl(0, 0%, 95%);
+      font-family: sans-serif;
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    .swiper-button-disabled {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">1</div>
+      <div class="swiper-slide">2</div>
+      <div class="swiper-slide">3</div>
+      <div class="swiper-slide">4</div>
+      <div class="swiper-slide">5</div>
+      <div class="swiper-slide">6</div>
+      <div class="swiper-slide">7</div>
+    </div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+  <script>
+    const swiper = new Swiper(".swiper", {
+      cssMode: true,
+      slidesPerView: 5,
+      spaceBetween: 12,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+      }
+    });
+  </script>
+</body>
+</html>
